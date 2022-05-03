@@ -6,7 +6,35 @@
 // --- Examples:
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
+// *-----------------------------------------------------
+// * Solution 1--Fastest
+function palindrome(str) {
 
-function palindrome(str) {}
+const reverseStr = str.split('').reduce((reversed, character)=> character+reversed,'')
+if(reverseStr===str){
+    return true
+}
+return false
+}
+// *-------------------------------------------------
 
+// *-----------------------------------------------------
+//* Solution 2--Best
+const palindrome=(str)=>{
+    reversed = str.split('').reverse().join('');
+    return str === reversed;
+}
+// *-------------------------------------------------
+
+// *-----------------------------------------------------
+// * Solution 3--Using .every()
+const palindrome =(str)=> {
+    return str.split('').every((char,i)=> {
+        return char=== str[str.length-i-1];
+    })
+}
+// *-----------------------------------------------------
+
+
+palindrome('racecar')
 module.exports = palindrome;
