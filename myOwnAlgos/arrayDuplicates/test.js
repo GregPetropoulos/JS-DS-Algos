@@ -1,0 +1,1 @@
+// write test in jest for duplicates in array 
